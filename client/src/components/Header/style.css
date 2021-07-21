@@ -1,0 +1,53 @@
+.header {
+    grid-area: header;
+    padding: 25px 40px 15px 25px;
+    background-image: url(../../images/spy-banner.png);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .header > a {
+    color: rgb(252, 32, 241);
+  }
+  
+  .header > h1 {
+    flex: 1 0 auto;
+  }
+  
+  #logo {
+    font-size: 52px;
+    color: rgb(252, 32, 241);
+  }
+  
+  #logo:hover {
+    color: #240090;
+    cursor: pointer;
+  }
+  
+  .header > ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  
+.navlink {
+    list-style: none;
+    font-size: 24px;
+    margin-left: 15px;
+  }
+  
+  #login {
+    color: #190061;
+  }
+  
+  #register {
+    color: #240090;
+  }
+  
+  #login:hover,
+  #register:hover {
+    color: rgb(252, 32, 241);
+  }
+  

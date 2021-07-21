@@ -1,0 +1,123 @@
+.formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .formContent h2 {
+    background-color: black;
+    color: rgb(252, 32, 241);
+    font-size: 36px;
+    text-align: center;
+  }
+  
+  .form {
+    width: 80%;
+    background-color: #0c0032;
+    color: rgb(252, 32, 241);
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 25px;
+    border: 3px solid #3500d3;
+    border-radius: 10px;
+  }
+  
+  .submitDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .submitBtn {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(252, 32, 241);
+    background-color: #0c0032;
+    border: solid 2px rgb(252, 32, 241);
+    padding: 0.75em 3rem;
+    margin: 1rem 0;
+  }
+  
+  .submitBtn:hover {
+    color: #0c0032;
+    border: solid 2px #0c0032;
+    background-color: rgb(252, 32, 241);
+    cursor: pointer;
+  }
+  
+  .cancelBtn {
+    color: #240090;
+    background-color: #0c0032;
+    border: none;
+    font-size: 20px;
+  }
+  
+  .cancelBtn:hover {
+    color: #3500d3;
+    cursor: pointer;
+  }
+  
+  .field {
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .inputField {
+    width: 100%;
+    border: 2px solid#3500d3;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-top: 8px;
+    padding: 0.5rem;
+  }
+  
+  .inputField:focus {
+    border: 2px solid rgb(252, 32, 241);
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 2px;
+    opacity: 0.6;
+    filter: invert(0.8);
+  }
+  
+  @media screen and (max-width: 414px) {
+    .formContent h2 {
+      font-size: 26px;
+    }
+  
+    .form {
+      color: rgb(252, 32, 241);
+      font-size: 14px;
+      padding: 15px;
+      border: 2px solid #3500d3;
+    }
+    .submitBtn {
+      font-size: 16px;
+      border: solid 1px rgb(252, 32, 241);
+      padding: 0.5em 1.75rem;
+      margin: 1rem 0;
+    }
+  
+    .submitBtn:hover {
+      border: solid 1px #0c0032;
+    }
+  
+    .cancelBtn {
+      font-size: 16px;
+    }
+  
+    .field {
+      margin: 5px;
+      padding: 5px;
+    }
+  }
+  

@@ -1,0 +1,140 @@
+html {
+  box-sizing: border-box;
+  background-color: black;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.mainContainer {
+  font-family: "Play", sans-serif;
+  background-color: black;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: -8px 0 -8px -8px;
+  display: grid;
+  grid-template-rows: 400px auto 100px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    "header header"
+    "content content"
+    "footer footer";
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.content {
+  grid-area: content;
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 414px) {
+  .mainContainer {
+    margin: -8px 0 10px -8px;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-rows: 200px auto 80px;
+    grid-template-columns: 375px;
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+    justify-content: center;
+  }
+
+  .header {
+    background-image: url(./images/spy-banner-mobile.png);
+    height: 200px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header > ul {
+    display: none;
+  }
+
+  .navlink {
+    font-size: 20px;
+  }
+
+  #logo {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  #menu {
+    text-align: left;
+    padding: 0 20px 0 20px;
+    grid-area: navbar;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "links links links"
+      "links links links";
+  }
+
+  #menuHeading > h2 {
+    display: none;
+  }
+
+  #menuLinks {
+    grid-area: links;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #menuLinks > a {
+    flex: 0 1 30%;
+    border: solid 1px black;
+    box-shadow: 1px 2.5px 2.5px black;
+    margin: 2px;
+    text-align: center;
+    align-items: center;
+    padding: 5px 8px;
+    white-space: nowrap;
+    font-size: 12px;
+    color: white;
+    background-color: #240090;
+  }
+
+  #homeDiv {
+    background-color: #0c0032 !important;
+    font-size: 14px !important;
+  }
+
+  #menuLinks > a:target {
+    border: solid 1px rgb(252, 32, 241);
+    cursor: pointer;
+  }
+
+  .footer {
+    grid-area: footer;
+    background-color: black;
+    color: rgb(252, 32, 241);
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+}

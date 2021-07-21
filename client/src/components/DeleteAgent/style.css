@@ -1,0 +1,114 @@
+#deleteSpy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #deleteSpy > h2 {
+    color: rgb(252, 32, 241);
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  #spyToDelete {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+#spyImageDiv {
+    flex: 1 0 30%;
+    margin-right: 30px;
+}
+
+  #spyInformation {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    /* justify-content: flex-start; */
+  }
+  
+  .spyDetails {
+    font-size: 20px;
+    margin: -5px 0px -5px 0px;
+    color: #350093;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .spyField {
+    color: rgb(252, 32, 241) !important;
+    flex: 1 0 auto;
+    margin-right: 25px;
+  }
+  
+  #confirmDelete {
+    text-align: center;
+    width: 50%;
+    padding: 20px 0 20px 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: black;
+    color:rgb(252, 32, 241);
+    border: solid 3px rgb(252, 32, 241);
+    border-radius: 10px;
+
+  }
+
+  #cancelBtn {
+    color: #240090;
+    background-color: black;
+    border: none;
+    font-size: 20px;
+  }
+  
+  #cancelBtn:hover {
+    color: #3500d3;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 414px) {
+    #deleteSpy {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #deleteSpy > h2 {
+      color: rgb(252, 32, 241);
+      font-size: 30px;
+      text-align: center;
+    }
+  
+    #spyToDelete {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    #spyInformation {
+      /* flex: 1 0 auto; */
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .spyDetails {
+      font-size: 16px;
+      color: #350093;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .spyField {
+      color: rgb(252, 32, 241) !important;
+      flex: 1 0 auto;
+    }
+  
+    #confirmDelete {
+      text-align: center;
+      margin-top: 15px;
+    }
+  }
+  

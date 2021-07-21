@@ -1,0 +1,33 @@
+.confirmationMessage {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto 30px auto;
+    background-color: black;
+    color: rgb(252, 32, 241);
+    padding: 25px;
+    border: 3px solid rgb(252, 32, 241);
+    border-radius: 10px;
+  }
+  
+  .confirmationMessage h2 {
+    color: rgb(252, 32, 241);
+    font-size: 36px;
+    text-align: center;
+  }
+
+  #confirmationMessageBtn {
+      padding: 10px 20px 10px 20px;
+      color: rgb(252, 32, 241);
+      background-color: #190061;
+      font-size: 20px;
+      border: solid 2px #190061;
+      box-shadow: 3px 3px 5px rgb(252, 32, 241);
+      border-radius: 4px;
+  }
+
+  #confirmationMessageBtn:hover {
+      cursor: pointer;
+      border: solid 2px rgb(252, 32, 241);
+  }
