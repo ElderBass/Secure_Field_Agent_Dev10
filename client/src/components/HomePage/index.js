@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 import ViewAgents from '../ViewAgents';
 import AGENTS from "../../data";
 import ConfirmationMessage from '../ConfirmationMessage';
@@ -9,126 +10,19 @@ import './style.css'
 
 const HomePage = (props) => {
 
-    const [agents, setAgents] = useState(AGENTS);
-    const [currentAgent, setCurrentAgent] = useState({});
-    const [confirmationMessage, setConfirmationMessage] = useState({
-        agent: {},
-        action: ""
-    })
-    const [viewState, setViewState] = useState("list");
-
-    const onInputChangeHandler = (e) => {
-        e.preventDefault();
-        setCurrentAgent({
-            ...currentAgent,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const handleAddAgent = () => {
-        setViewState("add");
-    }
-
-    const handleAddFormSubmit = (e) => {
-        e.preventDefault();
-
-        const nextId = agents.length > 0 ? Math.max(...agents.map(m => m.agentId)) + 1 : 1;
-
-        const newAgent = {
-            agentId: nextId,
-            firstName: e.target.firstName.value,
-            lastName: e.target.lastName.value,
-            image: e.target.image.value,
-            dob: e.target.dob.value,
-            heightInInches: e.target.heightInInches.value,
-            aliases: [],
-            agents: []
-        }
-        setCurrentAgent({ ...newAgent });
-        setAgents([...agents, newAgent]);
-        setViewState("confirm");
-        setConfirmationMessage({
-            agent: currentAgent,
-            action: "added"
-        })
-
-    }
-
-    const handleEditAgent = (id) => {
-        setViewState("edit");
-
-        for (let i = 0; i < agents.length; i++) {
-            if (agents[i].agentId === id) {
-                setCurrentAgent(agents[i]);
-                break;
-            }
-        }
-    }
-
-    const handleEditFormSubmit = (e) => {
-        e.preventDefault();
-
-        const updatedAgent = {
-            agentId: currentAgent.agentId,
-            firstName: e.target.firstName.value,
-            lastName: e.target.lastName.value,
-            image: e.target.image.value,
-            dob: e.target.dob.value,
-            heightInInches: e.target.heightInInches.value,
-            aliases: [],
-            agents: []
-        }
-
-        const newAgents = [...agents];
-        const updatedAgentIndex = newAgents.findIndex(a => a.agentId === currentAgent.agentId);
-
-        newAgents[updatedAgentIndex] = updatedAgent;
-
-        setCurrentAgent({ ...updatedAgent });
-        setAgents(newAgents);
-        setViewState("confirm");
-        setConfirmationMessage({
-            agent: currentAgent,
-            action: "updated"
-        })
-    }
-
-    const handleDeleteAgent = (id) => {
-
-        for (let i = 0; i < agents.length; i++) {
-            if (agents[i].agentId === id) {
-                setCurrentAgent(agents[i]);
-                console.log("current agent inside delete agent if statement = ", currentAgent);
-                break;
-            }
-        }
-        setViewState("delete");
-    }
-
-    const handleDeleteConfirmation = (e) => {
-        e.preventDefault();
-
-        setAgents(agents.filter(a => a.agentId !== currentAgent.agentId));
-        setViewState("confirm");
-
-        setConfirmationMessage({
-            agent: currentAgent,
-            action: "deleted"
-        })
-    }
-
-    const handleCancelForm = () => {
-        setViewState("list");
-        setCurrentAgent({});
-    }
+    // TODO add some links to different pages here OR have a legit navbar component alongside this shit
 
     return (
 
-        <main id="homePage" className="content">
-            <section id="welcomeDiv">
+        <div id="homePage" className="content">
+            <div id="welcomeDiv">
                 <h2>Expert Surveillance.<br />Unbeatable Outcomes.</h2>
-            </section>
-            <section className="highlightedAgents">
+            </div>
+            <div className="container" id="loginSignup">
+                <Link className="landingLink" to="/login">Login</Link>
+                <Link className="landingLink" to="/signup">Sign Up</Link>
+            </div>
+            <div className="highlightedAgents">
                 <h3>- Featured -</h3>
                 <div className="agentDisplay">
                     <div className="agentCard">
@@ -157,8 +51,8 @@ const HomePage = (props) => {
                         </main>
                     </div>
                 </div>
-            </section>
-            <section className="highlightedAgents">
+            </div>
+            <div className="highlightedAgents">
                 <h3>- Recently Added -</h3>
                 <div className="agentDisplay">
                     <div className="agentCard">
@@ -184,8 +78,8 @@ const HomePage = (props) => {
                         </main>
                     </div>
                 </div>
-            </section>
-        </main>
+            </div>
+        </div>
     );
 }
 

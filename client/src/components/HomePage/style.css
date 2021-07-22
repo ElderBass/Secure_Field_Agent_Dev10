@@ -36,6 +36,25 @@
     color: #190061;
     text-shadow: 2px 2px rgb(252, 32, 241);
   }
+
+  #loginSignup {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+
+  .landingLink {
+      background-color: #190061;
+      font-size: 30px;
+      text-decoration: none !important;
+      padding: 30px 45px 30px 45px;
+      margin: 40px 10px 40px 10px;
+  }
+
+  .landingLink:hover {
+      color: rgb(252, 32, 241);
+    box-shadow: 0 8px 16px rgb(252, 32, 241);
+  }
   
   .highlightedAgents {
     display: flex;

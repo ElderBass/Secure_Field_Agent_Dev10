@@ -36,6 +36,10 @@ a {
   color: white;
 }
 
+Link {
+  text-decoration: none;
+}
+
 .content {
   grid-area: content;
   width: 100%;

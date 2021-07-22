@@ -69,12 +69,12 @@ const SignUp = (props) => {
             <form className="form" onSubmit={handleRegisterUser}>
                 <div className="form-group field">
                     <label htmlFor="username">Username:</label>
-                    <input className="form-control inputField" type="text" id="username" name="username"
+                    <input className="inputField" type="text" id="username" name="username"
                         value={username} onChange={usernameOnChangeHandler} />
                 </div>
                 <div className="form-group field">
                     <label htmlFor="password">Password:</label>
-                    <input className="form-control inputField" type="password" id="password" name="password"
+                    <input className="inputField" type="password" id="password" name="password"
                         value={password} onChange={passwordOnChangeHandler} />
                 </div>
                 <div className="submitDiv">

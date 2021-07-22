@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from "react-router-dom";
+import AuthContext from "../../utils/AuthContext";
 import classified from "../../images/classified.png";
 
 import './style.css'
@@ -6,16 +8,36 @@ import './style.css'
 
 const ViewAgents = (props) => {
 
+    const [agents, setAgents] = useState([]);
+    const auth = useContext(AuthContext);
+  
+    const getAgents = () => {
+  
+      const init = {
+        headers: {
+          "Authorization": `Bearer ${auth.user.token}`
+        }
+      }
+  
+      fetch('http://localhost:8080/api/agent', init)
+        .then(response => response.json())
+        .then(data => setAgents(data))
+        .catch(error => console.log(error));
+    };
+  
+    useEffect(() => {
+      getAgents();
+    }, []);
 
     return (
 
         <main className="content">
             <div className="agentsBanner">
                 <h2>All Agents</h2>
-                <button onClick={props.addAgent} id="addAgentBtn">Add Agent +</button>
+                <Link to="/agents/add" id="addAgentBtn">Add Agent +</Link>
             </div>
             <div className="agentsDisplay">
-                {props.agents.map(a => (
+                {agents.map(a => (
                     <div className="agentCard" key={`${a.firstName}-p-${a.lastName}-${a.agentId}`}>
                     <header><h4>{`${a.firstName} ${a.lastName}`}</h4></header>
                     <main>
@@ -42,12 +64,12 @@ const ViewAgents = (props) => {
                         </div>
                     </main>
                     <footer>
-                        <button className="iconBtn" onClick={() => props.editAgent(a.agentId)}
+                        <Link className="iconBtn" to={`/agents/edit/${a.agentId}`}
                         ><i className="fas fa-pencil-alt fa-2x icon"></i
-                        ></button>
-                        <button className="iconBtn" onClick={() => props.deleteAgent(a.agentId)}
+                        ></Link>
+                        <Link className="iconBtn" to={`/agents/delete/${a.agentId}`}
                         ><i className="fas fa-trash-alt fa-2x icon"></i
-                        ></button>
+                        ></Link>
                     </footer>
                 </div>
                 ))}
