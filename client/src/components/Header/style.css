@@ -36,6 +36,7 @@
     list-style: none;
     font-size: 24px;
     margin-left: 15px;
+    text-decoration: none;
   }
   
   #login {
@@ -49,5 +50,6 @@
   #login:hover,
   #register:hover {
     color: rgb(252, 32, 241);
+    text-decoration: none;
   }
   

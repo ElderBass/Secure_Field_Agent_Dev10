@@ -91,3 +91,8 @@
 
     **Estimated Time:** 20 minutes
 
+### HomePage Refactor
+* My homepage from last assessment was basically view agents, which isn't going to fly this time around.
+* I'm going to port over some code from module 8 to flesh out home and add some bigger links for logging in/signing up in there
+
+    **Estimated Time:** 40 minutes

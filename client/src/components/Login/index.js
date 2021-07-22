@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import AuthContext from '../AuthContext';
+import AuthContext from '../../utils/AuthContext';
 
-import Errors from './Errors';
+import Errors from '../Errors';
 
 const Login = (props) => {
   const [username, setUsername] = useState('');
@@ -62,7 +62,7 @@ const Login = (props) => {
   };
 
   return (
-    <div className="formContent" id="loginContent">
+    <div className="content formContent" id="loginContent">
         <h2>Don't worry, you were never here ;)</h2>
         <form className="form" id="loginForm" onSubmit={formSubmitHandler}>
           <div className="field">
@@ -84,7 +84,7 @@ const Login = (props) => {
             />
           </div>
           <div className="submitDiv">
-            <Link className="cancelLink" to="/">Cancel</Link>
+            <Link className="cancelBtn" to="/">Cancel</Link>
             <button className="submitBtn" type="submit">Login</button>
           </div>
         </form>

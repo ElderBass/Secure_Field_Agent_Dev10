@@ -1,0 +1,177 @@
+#homePage {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  
+  #welcomeDiv {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../images/spy-vs-spy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 550px;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  #welcomeDiv > h2 {
+    font-size: 60px;
+    color: #190061;
+    padding: 15px;
+    background-color: rgb(252, 32, 241, 0.6);
+    border-radius: 15px;
+  }
+  
+  #welcomeDiv > h3 {
+    font-size: 40px;
+    color: #190061;
+    text-shadow: 2px 2px rgb(252, 32, 241);
+  }
+  
+  .highlightedAgents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(252, 32, 241);
+  }
+  
+  .highlightedAgents > h3 {
+    font-size: 42px;
+  }
+  
+  .agentDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .agentCard {
+    background-color: black;
+    border: solid 4px rgb(252, 32, 241);
+    border-radius: 8px;
+    margin: 12px;
+    flex: 0 1 35%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .agentCard > header {
+    background-color: #0c0032;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(252, 32, 241);
+    border-radius: 10px 10px 0 0;
+    flex: 0 0 60px;
+  }
+  .agentCard > main {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex: 1 0 auto;
+  }
+  .agentCard > main > img {
+    width: auto;
+    height: 400px;
+    margin-bottom: 10px;
+  }
+  .agentCard > main > p {
+    font-size: 24px;
+  }
+  
+  .agentImage {
+    width: 100%;
+    display: block;
+  }
+  
+  @media screen and (max-width: 414px) {
+    #welcomeDiv {
+      display: flex;
+      flex-direction: column;
+      background-image: url(../../images/spy-vs-spy.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 15px;
+      max-height: 300px;
+      width: 100%;
+      padding: 40px;
+    }
+  
+    #welcomeDiv > h2 {
+      font-size: 40px;
+      padding: 10px;
+    }
+  
+    .highlightedAgents > h3 {
+      font-size: 30px;
+    }
+  
+    .agentDisplay {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .agentCard {
+      background-color: black;
+      border: solid 3px rgb(252, 32, 241);
+      border-radius: 8px;
+      margin: 12px;
+      flex: 1 0 80%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .agentCard > header {
+      background-color: #0c0032;
+      font-size: 24px;
+      text-align: center;
+      color: rgb(252, 32, 241);
+      border-radius: 5px 5px 0 0;
+      flex: 0 0 40px;
+    }
+    .agentCard > main {
+      background-color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      flex: 1 0 auto;
+    }
+  
+    .agentCard > main > p {
+      font-size: 18px;
+    }
+  
+    .agentImage {
+      width: 100%;
+      display: block;
+    }
+  
+    #recentlyAdded {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      color: rgb(252, 32, 241);
+      font-size: 42px;
+    }
+  }
+  
