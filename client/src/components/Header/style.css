@@ -1,9 +1,10 @@
 .header {
     grid-area: header;
-    padding: 25px 40px 15px 25px;
+    padding: 25px 40px 25px 25px;
     background-image: url(../../images/spy-banner.png);
     display: flex;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
     justify-content: flex-start;
     margin-bottom: 40px;
   }
@@ -28,9 +29,8 @@
   
   .header > ul {
     display: flex;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    /* align-items: center; */
   }
 
   

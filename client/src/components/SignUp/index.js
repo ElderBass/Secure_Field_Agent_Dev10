@@ -10,6 +10,7 @@ const SignUp = (props) => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState([]);
 
     const auth = useContext(AuthContext);
@@ -24,8 +25,17 @@ const SignUp = (props) => {
         setPassword(event.target.value);
     };
 
+    const confirmPasswordOnChangeHandler = (event) => {
+        setConfirmPassword(event.target.value);
+    };
+
     const handleRegisterUser = async (e) => {
         e.preventDefault();
+
+        if (password !== confirmPassword) {
+            setErrors(["Passwords must match. You know the drill."]);
+            return;
+        }
 
         const user = {
             username: username,
@@ -92,6 +102,11 @@ const SignUp = (props) => {
                     <label htmlFor="password">Password:</label>
                     <input className="inputField" type="password" id="password" name="password"
                         value={password} onChange={passwordOnChangeHandler} />
+                </div>
+                <div className="form-group field">
+                    <label htmlFor="confirmPassword">Confirm Password:</label>
+                    <input className="inputField" type="password" id="confirmPassword" name="confirmPassword"
+                        value={password} onChange={confirmPasswordOnChangeHandler} />
                 </div>
                 <div className="submitDiv">
                     <Link to="/" className="cancelBtn">Cancel</Link>
