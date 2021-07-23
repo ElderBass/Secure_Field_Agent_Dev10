@@ -33,7 +33,7 @@
 
   
 .navlink {
-    list-style: none;
+    list-style: none !important;
     font-size: 24px;
     margin-left: 15px;
     text-decoration: none;
@@ -51,5 +51,11 @@
   #register:hover {
     color: rgb(252, 32, 241);
     text-decoration: none;
+  }
+
+  #welcomeMessage {
+
+    margin-right: 30px;
+    color: rgb(252, 32, 241);
   }
   
