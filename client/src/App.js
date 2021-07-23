@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import { useState } from "react";
 import jwt_decode from "jwt-decode";
 import Header from "./components/Header";
@@ -58,9 +58,6 @@ function App() {
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path="/agents/all">
-              <ViewAgents />
-            </Route>
             <Route exact path="/login">
               <Login />
             </Route>
@@ -70,11 +67,26 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
+            <Route exact path="/agents/all">
+            {user ? (
+              <ViewAgents />
+            ) : (
+              <Redirect to="/login" />
+            )}
+            </Route>
             <Route exact path="/agents/add">
+              {user ? (
               <AddAgent />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route exact path="/agents/edit/:id">
+            {user ? (
               <UpdateAgent />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route exact path="/agents/delete/:id">
               <DeleteAgent />

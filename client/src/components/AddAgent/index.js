@@ -13,7 +13,7 @@ const AddAgent = (props) => {
         middleName: "",
         lastName: "",
         dob: "",
-        heightInInches: 0,
+        heightInInches: 36,
     });
 
     const [errors, setErrors] = useState([]);
@@ -29,10 +29,11 @@ const AddAgent = (props) => {
     };
 
     const handleSubmitAddForm = (e) => {
+        e.preventDefault();
 
         const newAgent = {
             firstName: e.target.firstName.value,
-            lasstName: e.target.lastName.value,
+            lastName: e.target.lastName.value,
             middleName: e.target.middleName.value,
             dob: e.target.dob.value,
             heightInInches: e.target.heightInInches.value
@@ -47,20 +48,20 @@ const AddAgent = (props) => {
             body: JSON.stringify(newAgent)
           };
       
-          fetch('http://localhost:8080/api/todos', init)
+          fetch('http://localhost:8080/api/agent', init)
             .then(response => {
+                console.log("first response in add agent = ", response);
               if (response.status === 201 || response.status === 400) {
                 return response.json();
               }
-              return Promise.reject('Something unexpected went wrong :)');
+              return response.json();
             })
             .then(data => {
-              // we either created the recorded...
-              if (data.id) {
-                // redirect the user back to the /todos route
-                history.push('/todos');
+                console.log("data before if/else in add agent = ", data);
+              if (data.agentId) {
+                history.push('/agents/all');
               } else {
-                // we have error messages
+                console.log("data in else, messages = ", data.message);
                 setErrors(data);
               }
             })
@@ -71,8 +72,10 @@ const AddAgent = (props) => {
     
     return (
 
-        <div className="formContent">
+        <div className="content formContent">
             <h2>Add to our ranks of nobodies.</h2>
+            <br/>
+            <Errors errors={errors} />
             <form className="form" onSubmit={handleSubmitAddForm}>
 
                 <div className="field">
@@ -127,7 +130,7 @@ const AddAgent = (props) => {
                         id="heightInInches"
                         name="heightInInches"
                         type="number"
-                        min="48"
+                        min="36"
                         max="144"
                         value={agent.heightInInches}
                         onChange={inputChangeHandler}

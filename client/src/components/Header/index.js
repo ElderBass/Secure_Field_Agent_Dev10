@@ -16,18 +16,20 @@ const Header = (props) => {
             <h1>
                 <Link to="/"><span id="logo">Best Spy</span></Link>
             </h1>
-            <ul>
-                {auth.user ? <li className="navlink"><p id="welcomeMessage">Logged in as {auth.user.username}</p></li> : null}
-                {auth.user ? 
+
+            {auth.user ? <ul> <li className="navlink">
+                <p id="welcomeMessage">Logged in as <span id="usernameHeader">{auth.user.username}</span></p></li>
                 <li className="navlink">
                     <Link to="/logout"><span id="login">Logout</span></Link>
-                </li> : <li className="navlink">
+                </li>
+            </ul> : <ul>
+                <li className="navlink">
                     <Link to="/login"><span id="login">Login</span></Link>
-                </li>}
-                {auth.user ? null : <li className="navlink">
+                </li>
+                <li>
                     <Link to="/signup"><span id="register">Sign Up</span></Link>
-                </li> }
-            </ul>
+                </li> </ul>}
+
         </header>
     );
 }

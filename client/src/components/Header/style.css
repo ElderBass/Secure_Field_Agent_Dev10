@@ -28,7 +28,9 @@
   
   .header > ul {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: flex-start;
   }
 
   
@@ -56,6 +58,10 @@
   #welcomeMessage {
 
     margin-right: 30px;
+    color: #3500D3;
+  }
+
+  #usernameHeader {
     color: rgb(252, 32, 241);
   }
   

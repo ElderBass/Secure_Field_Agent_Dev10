@@ -32,12 +32,15 @@ html {
 }
 
 a {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+}
+
+.link {
+  text-decoration: none !important;
 }
 
 Link {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .content {

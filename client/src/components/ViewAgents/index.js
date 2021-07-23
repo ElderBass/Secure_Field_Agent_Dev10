@@ -34,12 +34,15 @@ const ViewAgents = (props) => {
         <main className="content">
             <div className="agentsBanner">
                 <h2>All Agents</h2>
-                <Link to="/agents/add" id="addAgentBtn">Add Agent +</Link>
+                <Link to="/agents/add" className="link" id="addAgentBtn">Add Agent +</Link>
             </div>
+            <br/>
+            <hr/>
+            <br/>
             <div className="agentsDisplay">
                 {agents.map(a => (
                     <div className="agentCard" key={`${a.firstName}-p-${a.lastName}-${a.agentId}`}>
-                    <header><h4>{`${a.firstName} ${a.lastName}`}</h4></header>
+                    <header><h4>{`${a.firstName} ${a.middleName} ${a.lastName}`}</h4></header>
                     <main>
                         <img
                             src={a.image ? a.image : classified}
@@ -51,10 +54,6 @@ const ViewAgents = (props) => {
                                 <tr>
                                     <td>DoB:</td>
                                     <td className="spyData">{a.dob ? a.dob : "Unknown"}</td>
-                                </tr>
-                                <tr>
-                                    <td>Spy Since:</td>
-                                    <td className="spyData">05/12/1990</td>
                                 </tr>
                                 <tr>
                                     <td>Height:</td>

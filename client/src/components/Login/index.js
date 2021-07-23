@@ -61,10 +61,11 @@ const Login = (props) => {
   return (
     <div className="content formContent" id="loginContent">
         <h2>Don't worry, you were never here ;)</h2>
+        <br/>
         <Errors errors={errors} />
         <form className="form" id="loginForm" onSubmit={formSubmitHandler}>
           <div className="field">
-            <label for="userName">User Name:</label>
+            <label htmlFor="userName">User Name:</label>
             <input
               className="inputField"
               id="userName"
@@ -74,7 +75,7 @@ const Login = (props) => {
             />
           </div>
           <div className="field">
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               className="inputField"
               id="password"
