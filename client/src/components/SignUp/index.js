@@ -54,8 +54,24 @@ const SignUp = (props) => {
                 if (data.messages) {
                     setErrors(data.messages);
                 } else {
-                    console.log(data);
-                    history.push("/login");
+                    fetch('http://localhost:5000/authenticate', init)
+                        .then(response => {
+                            if (response.status === 200) {
+                                return response.json();
+                            } else if (response.status === 403) {
+                                return null;
+                            }
+                            return Promise.reject('Something unexpected went wrong :)');
+                        })
+                        .then(data => {
+                            if (data) {
+                                auth.login(data.jwt_token);
+                                history.push("/");
+                            } else {
+                                setErrors(["Login Failed."]);
+                            }
+                        })
+                        .catch(error => console.log(error));
                 }
             })
             .catch(error => console.log(error));

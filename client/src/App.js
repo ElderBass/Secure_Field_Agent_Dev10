@@ -7,6 +7,7 @@ import HomePage from "./components/HomePage";
 import NotFound from "./components/NotFound";
 import ViewAgents from "./components/ViewAgents";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 import SignUp from "./components/SignUp";
 import AddAgent from "./components/AddAgent";
 import UpdateAgent from "./components/UpdateAgent";
@@ -62,6 +63,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/logout">
+              <Logout />
             </Route>
             <Route exact path="/signup">
               <SignUp />

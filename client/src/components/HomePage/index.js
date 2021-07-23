@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom"
-import ViewAgents from '../ViewAgents';
-import AGENTS from "../../data";
-import ConfirmationMessage from '../ConfirmationMessage';
-
 import thaler from "../../images/thaler.png";
+import AuthContext from '../../utils/AuthContext';
 
 import './style.css'
 
 const HomePage = (props) => {
+
+    const auth = useContext(AuthContext);
 
     // TODO add some links to different pages here OR have a legit navbar component alongside this shit
 
@@ -18,14 +17,16 @@ const HomePage = (props) => {
             <div id="welcomeDiv">
                 <h2>Expert Surveillance.<br />Unbeatable Outcomes.</h2>
             </div>
-            <div className="container" id="loginSignup">
-                <Link className="landingLink" to="/login">Login</Link>
-                <Link className="landingLink" to="/signup">Sign Up</Link>
-            </div>
+            {auth.user ? <h2 id="welcomeMsg">Welcome back, <span id="welcomeUser">{auth.user.username}</span></h2>
+                : <div className="container" id="loginSignup">
+                    <Link className="landingLink" to="/login">Login</Link>
+                    <Link className="landingLink" to="/signup">Sign Up</Link>
+                </div>}
+            <hr></hr>
             <div className="highlightedAgents">
-                <h3>- Featured -</h3>
-                <div className="agentDisplay">
-                    <div className="agentCard">
+                <h3>- Featured Agents -</h3>
+                <div className="agentsDisplay">
+                    <div className="homeAgentCard">
                         <header><h4>Michael Westen</h4></header>
                         <main>
                             <img
@@ -39,7 +40,7 @@ const HomePage = (props) => {
                             </p>
                         </main>
                     </div>
-                    <div className="agentCard">
+                    <div className="homeAgentCard">
                         <header><h4>Varys</h4></header>
                         <main>
                             <img
@@ -52,10 +53,11 @@ const HomePage = (props) => {
                     </div>
                 </div>
             </div>
+            <hr></hr>
             <div className="highlightedAgents">
                 <h3>- Recently Added -</h3>
-                <div className="agentDisplay">
-                    <div className="agentCard">
+                <div className="agentsDisplay">
+                    <div className="homeAgentCard">
                         <header><h4>Carmen Cortez</h4></header>
                         <main>
                             <img
@@ -66,7 +68,7 @@ const HomePage = (props) => {
                             <p>"Spy work? That's easy..."</p>
                         </main>
                     </div>
-                    <div className="agentCard">
+                    <div className="homeAgentCard">
                         <header><h4>Thaler</h4></header>
                         <main>
                             <img

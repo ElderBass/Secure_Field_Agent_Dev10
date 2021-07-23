@@ -17,7 +17,7 @@ const Header = (props) => {
                 <Link to="/"><span id="logo">Best Spy</span></Link>
             </h1>
             <ul>
-                {auth.user ? <li className="navlink"><p id="welcomeMessage">Welcome, {auth.user.username}</p></li> : null}
+                {auth.user ? <li className="navlink"><p id="welcomeMessage">Logged in as {auth.user.username}</p></li> : null}
                 {auth.user ? 
                 <li className="navlink">
                     <Link to="/logout"><span id="login">Logout</span></Link>

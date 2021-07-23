@@ -1,0 +1,15 @@
+#logoutUser {
+    color: white;
+}
+
+#confirmLogout {
+    text-align: center;
+}
+
+#confirmLogout > h2 {
+    margin-bottom: 30px;
+}
+
+#confirmLogout > h4 {
+    margin-bottom: 30px;
+}
