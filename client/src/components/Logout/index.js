@@ -10,9 +10,9 @@ const Logout = (props) => {
     const auth = useContext(AuthContext);
     const history = useHistory();
 
-    const handleLogout = async () => {
-        await auth.logout();
+    const handleLogout = () => {
         history.push("/");
+        auth.logout();
     }
 
     return (
