@@ -58,9 +58,17 @@ hr {
   align-items: center;
 }
 
+#welcomeUserHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .landingLink {
   background-color: #190061;
   font-size: 30px;
+  color: white;
+  text-align: center;
   text-decoration: none !important;
   padding: 30px 45px 30px 45px;
   margin: 40px 10px 40px 10px;
@@ -72,7 +80,7 @@ hr {
 }
 
 .highlightedAgents {
-    width: 100%;
+  width: 100%;
   margin: 30px auto 30px auto;
   display: flex;
   flex-direction: column;
@@ -87,53 +95,51 @@ hr {
 }
 
 .homeAgentCard {
-    background-color: black;
-    border: solid 4px rgb(252, 32, 241);
-    border-radius: 8px;
-    margin: 12px;
-    flex: 0 0 40%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .homeAgentCard > header {
-    background-color: #0c0032;
-    padding: 28px;
-    text-align: center;
-    color: rgb(252, 32, 241);
-    border-radius: 5px 5px 0 0;
-    flex: 0 0 70px;
-  }
-  
-  .homeAgentCard > header > h4 {
-    font-size: 32px;
-  }
-  .homeAgentCard > main {
-    background-color: black;
-    color: rgb(252, 32, 241);
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: left;
-    padding: 20px;
-    flex: 1 0 auto;
-  }
-  .homeAgentCard > main > img {
-    width: 100%;
-    display: block;
-    max-height: 400px;
-    margin-bottom: 10px;
-  }
+  background-color: black;
+  border: solid 4px rgb(252, 32, 241);
+  border-radius: 8px;
+  margin: 12px;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+}
 
-  .homeAgentCard > main > p {
-      margin-top: 20px;
-    flex: 0 0 50px;
-    font-size: 20px;
-  }
-  
+.homeAgentCard > header {
+  background-color: #0c0032;
+  padding: 28px;
+  text-align: center;
+  color: rgb(252, 32, 241);
+  border-radius: 5px 5px 0 0;
+  flex: 0 0 70px;
+}
 
+.homeAgentCard > header > h4 {
+  font-size: 32px;
+}
+.homeAgentCard > main {
+  background-color: black;
+  color: rgb(252, 32, 241);
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  padding: 20px;
+  flex: 1 0 auto;
+}
+.homeAgentCard > main > img {
+  width: 100%;
+  display: block;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+
+.homeAgentCard > main > p {
+  margin-top: 20px;
+  flex: 0 0 50px;
+  font-size: 20px;
+}
 
 @media screen and (max-width: 414px) {
   #welcomeDiv {

@@ -9,7 +9,6 @@ const HomePage = (props) => {
 
     const auth = useContext(AuthContext);
 
-    // TODO add some links to different pages here OR have a legit navbar component alongside this shit
 
     return (
 
@@ -17,7 +16,9 @@ const HomePage = (props) => {
             <div id="welcomeDiv">
                 <h2>Expert Surveillance.<br />Unbeatable Outcomes.</h2>
             </div>
-            {auth.user ? <h2 id="welcomeMsg">Welcome back, <span id="welcomeUser">{auth.user.username}</span></h2>
+            {auth.user ? <div id="welcomeUserHome"> 
+                <h2 id="welcomeMsg">Welcome back to HQ, <span id="welcomeUser">{auth.user.username}</span></h2>
+                <Link to="/agents/all" className="landingLink">View Agents</Link> </div>
                 : <div className="container" id="loginSignup">
                     <Link className="landingLink" to="/login">Login</Link>
                     <Link className="landingLink" to="/signup">Sign Up</Link>
