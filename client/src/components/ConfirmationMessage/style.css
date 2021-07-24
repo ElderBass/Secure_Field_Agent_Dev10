@@ -1,17 +1,17 @@
-.confirmationMessage {
+#confirmationMessage {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 80%;
     margin: 20px auto 30px auto;
+    padding: 100px 10px 100px 10px;
     background-color: black;
     color: rgb(252, 32, 241);
-    padding: 25px;
     border: 3px solid rgb(252, 32, 241);
     border-radius: 10px;
   }
   
-  .confirmationMessage h2 {
+  #confirmationMessage h2 {
     color: rgb(252, 32, 241);
     font-size: 36px;
     text-align: center;
@@ -20,14 +20,19 @@
   #confirmationMessageBtn {
       padding: 10px 20px 10px 20px;
       color: rgb(252, 32, 241);
-      background-color: #190061;
-      font-size: 20px;
-      border: solid 2px #190061;
-      box-shadow: 3px 3px 5px rgb(252, 32, 241);
-      border-radius: 4px;
+      background-color: black;
+      font-size: 24px;
+      border: solid 2px black;
+      box-shadow: 0px 3px 6px rgb(252, 32, 241);
+  }
+
+  #agentName {
+    color: #3500D3;
+    font-size: 44px;
   }
 
   #confirmationMessageBtn:hover {
       cursor: pointer;
       border: solid 2px rgb(252, 32, 241);
+      box-shadow: 0px 5px 10px rgb(252, 32, 241);
   }

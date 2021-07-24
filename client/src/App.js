@@ -13,11 +13,16 @@ import AddAgent from "./components/AddAgent";
 import UpdateAgent from "./components/UpdateAgent";
 import DeleteAgent from "./components/DeleteAgent";
 import AuthContext from "./utils/AuthContext";
+import ConfirmationMessage from "./components/ConfirmationMessage";
 
 
 function App() {
 
   const [user, setUser] = useState(null);
+  const [confirmation, setConfirmation] = useState({
+    action: "",
+    agentName: ""
+  })
 
   const login = (token) => {
     console.log(token);
@@ -49,6 +54,14 @@ function App() {
     logout
   };
 
+  const setConfirmationMessage = (agentName, action) => {
+    setConfirmation({
+      action,
+      agentName
+    })
+  };
+
+
   return (
     <AuthContext.Provider value={auth}>
       <Router>
@@ -68,28 +81,39 @@ function App() {
               <SignUp />
             </Route>
             <Route exact path="/agents/all">
-            {user ? (
-              <ViewAgents />
-            ) : (
-              <Redirect to="/login" />
-            )}
+              {user ? (
+                <ViewAgents />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route exact path="/agents/add">
               {user ? (
-              <AddAgent />
+                <AddAgent confirm={setConfirmationMessage}/>
               ) : (
                 <Redirect to="/login" />
               )}
             </Route>
-            <Route exact path="/agents/edit/:id">
-            {user ? (
-              <UpdateAgent />
+            <Route path="/agents/edit/:id">
+              {user ? (
+                <UpdateAgent confirm={setConfirmationMessage} />
               ) : (
                 <Redirect to="/login" />
               )}
             </Route>
-            <Route exact path="/agents/delete/:id">
-              <DeleteAgent />
+            <Route path="/agents/delete/:id">
+              {user ? (
+                <DeleteAgent confirm={setConfirmationMessage} />
+              ) : (
+                <Redirect to="/login" />
+              )}
+            </Route>
+            <Route path="/confirmation">
+              {user ? (
+                <ConfirmationMessage confirmation={confirmation} />
+              ) : (
+                <Redirect to="/login" />
+              )}
             </Route>
             <Route path="*">
               <NotFound />

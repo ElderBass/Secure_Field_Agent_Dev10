@@ -42,39 +42,40 @@ const AddAgent = (props) => {
         const init = {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json',
-              "Authorization": `Bearer ${auth.user.token}`
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${auth.user.token}`
             },
             body: JSON.stringify(newAgent)
-          };
-      
-          fetch('http://localhost:8080/api/agent', init)
+        };
+
+        fetch('http://localhost:8080/api/agent', init)
             .then(response => {
                 console.log("first response in add agent = ", response);
-              if (response.status === 201 || response.status === 400) {
+                if (response.status === 201 || response.status === 400) {
+                    return response.json();
+                }
                 return response.json();
-              }
-              return response.json();
             })
             .then(data => {
                 console.log("data before if/else in add agent = ", data);
-              if (data.agentId) {
-                history.push('/agents/all');
-              } else {
-                console.log("data in else, messages = ", data.message);
-                setErrors(data);
-              }
+                if (data.agentId) {
+                    props.confirm(`${data.firstName} ${data.middleName} ${data.lastName}`, "added");
+                    history.push('/confirmation');
+                } else {
+                    console.log("data in else, messages = ", data.message);
+                    setErrors(data);
+                }
             })
             .catch(error => console.log(error));
     }
 
 
-    
+
     return (
 
         <div className="content formContent">
             <h2>Add to our ranks of nobodies.</h2>
-            <br/>
+            <br />
             <Errors errors={errors} />
             <form className="form" onSubmit={handleSubmitAddForm}>
 
@@ -89,7 +90,7 @@ const AddAgent = (props) => {
                         onChange={inputChangeHandler}
                     />
                 </div>
-                
+
                 <div className="field">
                     <label htmlFor="middleName">Middle Name:</label>
                     <input

@@ -59,7 +59,8 @@ const DeleteAgent = (props) => {
         fetch(`http://localhost:8080/api/agent/${id}`, init)
             .then(res => {
                 if (res.status === 204) {
-                    history.push("/agents/all");
+                    props.confirm(`${agent.firstName} ${agent.middleName} ${agent.lastName}`, "deleted");
+                    history.push("/confirmation");
                 }
                 else if (res.status === 404) {
                     return Promise.reject(`Received 404 Not Found for Spy ID: ${id}`);

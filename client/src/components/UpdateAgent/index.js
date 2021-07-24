@@ -90,7 +90,8 @@ const UpdateAgent = (props) => {
             })
             .then(data => {
                 if (!data) {
-                    history.push('/agents/all');
+                    props.confirm(`${agent.firstName} ${agent.middleName} ${agent.lastName}`, "updated");
+                    history.push('/confirmation');
                 } else {
                     setErrors(data);
                 }
