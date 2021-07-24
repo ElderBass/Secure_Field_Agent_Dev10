@@ -60,6 +60,7 @@ const UpdateAgent = (props) => {
         e.preventDefault();
 
         const newAgent = {
+            agentId: id,
             firstName: e.target.firstName.value,
             lastName: e.target.lastName.value,
             middleName: e.target.middleName.value,
