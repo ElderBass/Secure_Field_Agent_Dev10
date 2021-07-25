@@ -14,6 +14,7 @@ import UpdateAgent from "./components/UpdateAgent";
 import DeleteAgent from "./components/DeleteAgent";
 import AuthContext from "./utils/AuthContext";
 import ConfirmationMessage from "./components/ConfirmationMessage";
+import LoginMessage from "./components/Login/LoginMessage";
 
 
 function App() {
@@ -93,6 +94,9 @@ function App() {
               ) : (
                 <Redirect to="/login" />
               )}
+            </Route>
+            <Route exact path ="/login/message">
+              <LoginMessage />
             </Route>
             <Route path="/agents/edit/:id">
               {user ? (

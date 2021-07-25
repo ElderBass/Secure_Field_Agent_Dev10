@@ -18,7 +18,7 @@ const HomePage = (props) => {
             </div>
             {auth.user ? <div id="welcomeUserHome"> 
                 <h2 id="welcomeMsg">Welcome back to HQ, <span id="welcomeUser">{auth.user.username}</span></h2>
-                <Link to="/agents/all" className="landingLink">View Agents</Link> </div>
+                <Link to="/agents/all" id="viewAgentsButton">View Agents</Link> </div>
                 : <div className="container" id="loginSignup">
                     <Link className="landingLink" to="/login">Login</Link>
                     <Link className="landingLink" to="/signup">Sign Up</Link>

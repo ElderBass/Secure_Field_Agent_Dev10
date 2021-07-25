@@ -1,0 +1,8 @@
+#errorsDiv {
+    background-color: black;
+    color: rgb(252, 32, 241);
+    border: solid 3px rgb(252, 32, 241);
+    text-align: center;
+    padding: 40px;
+    margin: 20px 0 20px 0;
+}

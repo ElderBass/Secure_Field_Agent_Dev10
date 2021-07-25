@@ -49,7 +49,7 @@ const Login = (props) => {
       .then(data => {
         if (data) {
           auth.login(data.jwt_token);
-          history.push("/agents/all");
+          history.push("/login/message");
         } else {
           setErrors(["Login Failed."]);
         }

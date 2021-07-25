@@ -49,7 +49,7 @@ hr {
 }
 
 #welcomeUser {
-  color: #240090;
+  color: #3500d3;
 }
 
 #loginSignup {
@@ -62,6 +62,7 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .landingLink {
@@ -72,9 +73,26 @@ hr {
   text-decoration: none !important;
   padding: 30px 45px 30px 45px;
   margin: 40px 10px 40px 10px;
+  width: 40%;
 }
 
 .landingLink:hover {
+  color: rgb(252, 32, 241);
+  box-shadow: 0 8px 16px rgb(252, 32, 241);
+}
+
+#viewAgentsButton {
+  background-color: #190061;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none !important;
+  padding: 30px 45px 30px 45px;
+  margin: 40px 10px 40px 10px;
+  width: 60% !important;
+}
+
+#viewAgentsButton:hover {
   color: rgb(252, 32, 241);
   box-shadow: 0 8px 16px rgb(252, 32, 241);
 }

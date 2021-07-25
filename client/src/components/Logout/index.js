@@ -16,11 +16,11 @@ const Logout = (props) => {
     }
 
     return (
-        <div className="content form" id="confirmLogout">
+        <div className="content" id="confirmLogout">
             <h2>They on to you, <span id="logoutUser">{auth.user.username}</span>?</h2>
             <h4>If you need to lie low, we understand. Just say the word.</h4>
-            <div className="submitDiv">
-                <Link to="/agents/all" className="cancelBtn">Cancel</Link>
+            <div id="logoutButtons">
+                <Link to="/agents/all" className="cancelBtn" id="cancelLogout">Cancel</Link>
                 <button onClick={handleLogout} to="/" className="submitBtn">Lie Low</button>
             </div>
 
