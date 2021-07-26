@@ -3,15 +3,15 @@
 
 ## Requirements Checklist
 
-* [ ] Features (each feature complete, works without errors)
-  * [ ] Home
-  * [ ] Login
-  * [ ] Register
-  * [ ] Agents
-  * [ ] Add Agent
-  * [ ] Edit Agent
-  * [ ] Delete Agent
-  * [ ] Not Found (displays for all unknown routes)
+* [x] Features (each feature complete, works without errors)
+  * [x] Home
+  * [x] Login
+  * [x] Register
+  * [x] Agents
+  * [x] Add Agent
+  * [x] Edit Agent
+  * [x] Delete Agent
+  * [x] Not Found (displays for all unknown routes)
 * [x] Security
   * [x] Login State (the current logged in user's username displays somewhere on the page along with a "Logout" button)
   * [x] Logout (app provides a way for the current user to logout)

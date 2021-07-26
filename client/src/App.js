@@ -15,6 +15,7 @@ import DeleteAgent from "./components/DeleteAgent";
 import AuthContext from "./utils/AuthContext";
 import ConfirmationMessage from "./components/ConfirmationMessage";
 import LoginMessage from "./components/Login/LoginMessage";
+import SignUpMessage from "./components/SignUp/SignUpMessage";
 
 
 function App() {
@@ -81,6 +82,9 @@ function App() {
             <Route exact path="/signup">
               <SignUp />
             </Route>
+            <Router exact path="/signup/message">
+              <SignUpMessage />
+            </Router>
             <Route exact path="/agents/all">
               {user ? (
                 <ViewAgents />

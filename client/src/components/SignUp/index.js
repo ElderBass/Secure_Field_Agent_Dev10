@@ -76,9 +76,9 @@ const SignUp = (props) => {
                         .then(data => {
                             if (data) {
                                 auth.login(data.jwt_token);
-                                history.push("/");
+                                history.push("/signup/message");
                             } else {
-                                setErrors(["Login Failed."]);
+                                setErrors(["Registration Failed."]);
                             }
                         })
                         .catch(error => console.log(error));
@@ -106,7 +106,7 @@ const SignUp = (props) => {
                 <div className="form-group field">
                     <label htmlFor="confirmPassword">Confirm Password:</label>
                     <input className="inputField" type="password" id="confirmPassword" name="confirmPassword"
-                        value={password} onChange={confirmPasswordOnChangeHandler} />
+                        value={confirmPassword} onChange={confirmPasswordOnChangeHandler} />
                 </div>
                 <div className="submitDiv">
                     <Link to="/" className="cancelBtn">Cancel</Link>
