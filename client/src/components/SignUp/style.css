@@ -1,0 +1,15 @@
+.inputField {
+    width: 100%;
+    border: 2px solid#3500d3;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-top: 8px;
+    padding: 0.5rem;
+  }
+  
+  .inputField:focus {
+    border: 2px solid rgb(252, 32, 241);
+    border-radius: 5px;
+    outline: none;
+  }

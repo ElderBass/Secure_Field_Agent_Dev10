@@ -1,9 +1,9 @@
 .header {
     grid-area: header;
-    padding: 25px 40px 15px 25px;
+    padding: 25px 40px 25px 25px;
     background-image: url(../../images/spy-banner.png);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     margin-bottom: 40px;
   }
@@ -26,16 +26,18 @@
     cursor: pointer;
   }
   
-  .header > ul {
+  .headerLinks {
+    list-style: none !important;
     display: flex;
     justify-content: space-evenly;
   }
 
   
 .navlink {
-    list-style: none;
+    list-style: none !important;
     font-size: 24px;
     margin-left: 15px;
+    text-decoration: none;
   }
   
   #login {
@@ -48,6 +50,17 @@
   
   #login:hover,
   #register:hover {
+    color: rgb(252, 32, 241);
+    text-decoration: none;
+  }
+
+  #welcomeMessage {
+
+    margin-right: 30px;
+    color: #3500D3;
+  }
+
+  #usernameHeader {
     color: rgb(252, 32, 241);
   }
   

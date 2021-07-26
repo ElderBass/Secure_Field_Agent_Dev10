@@ -1,0 +1,196 @@
+#homePage {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+#welcomeDiv {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../images/spy-vs-spy.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 30px;
+  min-height: 550px;
+  width: 100%;
+  padding: 40px;
+}
+
+#welcomeDiv > h2 {
+  font-size: 60px;
+  color: #190061;
+  padding: 15px;
+  background-color: rgb(252, 32, 241, 0.6);
+  border-radius: 15px;
+}
+
+#welcomeDiv > h3 {
+  font-size: 40px;
+  color: #190061;
+  text-shadow: 2px 2px rgb(252, 32, 241);
+}
+
+hr {
+  border: solid 3px rgb(252, 32, 241);
+  width: 100%;
+}
+
+#welcomeMsg {
+  color: rgb(252, 32, 241);
+  font-size: 40px;
+  margin: 30px 0 30px 0;
+}
+
+#welcomeUser {
+  color: #3500d3;
+}
+
+#loginSignup {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#welcomeUserHome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingLink {
+  background-color: #190061;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none !important;
+  padding: 30px 45px 30px 45px;
+  margin: 40px 10px 40px 10px;
+  width: 40%;
+}
+
+.landingLink:hover {
+  color: rgb(252, 32, 241);
+  box-shadow: 0 8px 16px rgb(252, 32, 241);
+}
+
+#viewAgentsButton {
+  background-color: #190061;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: none !important;
+  padding: 30px 45px 30px 45px;
+  margin: 40px 10px 40px 10px;
+  width: 60% !important;
+}
+
+#viewAgentsButton:hover {
+  color: rgb(252, 32, 241);
+  box-shadow: 0 8px 16px rgb(252, 32, 241);
+}
+
+.highlightedAgents {
+  width: 100%;
+  margin: 30px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: rgb(252, 32, 241);
+}
+
+.highlightedAgents > h3 {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.homeAgentCard {
+  background-color: black;
+  border: solid 4px rgb(252, 32, 241);
+  border-radius: 8px;
+  margin: 12px;
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeAgentCard > header {
+  background-color: #0c0032;
+  padding: 28px;
+  text-align: center;
+  color: rgb(252, 32, 241);
+  border-radius: 5px 5px 0 0;
+  flex: 0 0 70px;
+}
+
+.homeAgentCard > header > h4 {
+  font-size: 32px;
+}
+.homeAgentCard > main {
+  background-color: black;
+  color: rgb(252, 32, 241);
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+  padding: 20px;
+  flex: 1 0 auto;
+}
+.homeAgentCard > main > img {
+  width: 100%;
+  display: block;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+
+.homeAgentCard > main > p {
+  margin-top: 20px;
+  flex: 0 0 50px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 414px) {
+  #welcomeDiv {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../../images/spy-vs-spy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 15px;
+    max-height: 300px;
+    width: 100%;
+    padding: 40px;
+  }
+
+  #welcomeDiv > h2 {
+    font-size: 40px;
+    padding: 10px;
+  }
+
+  .highlightedAgents > h3 {
+    font-size: 30px;
+  }
+
+  #recentlyAdded {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(252, 32, 241);
+    font-size: 42px;
+  }
+}

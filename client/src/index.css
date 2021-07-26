@@ -32,8 +32,15 @@ html {
 }
 
 a {
-  text-decoration: none;
-  color: white;
+  text-decoration: none !important;
+}
+
+.link {
+  text-decoration: none !important;
+}
+
+Link {
+  text-decoration: none !important;
 }
 
 .content {
@@ -126,6 +133,12 @@ a {
   #menuLinks > a:target {
     border: solid 1px rgb(252, 32, 241);
     cursor: pointer;
+  }
+
+  .content {
+    grid-area: content;
+    width: 100%;
+    margin: auto;
   }
 
   .footer {

@@ -1,0 +1,38 @@
+#notFound {
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#notFound > h1 {
+    color: rgb(252, 32, 241);
+    font-size: 60px;
+}
+
+/* #notFound > img {
+    max-height: 40%;
+} */
+#notFound > h2 {
+    font-size: 30px;
+    color:#3500D3;
+}
+
+#returnToHQ {
+    width: 50%;
+    padding: 30px 10px 30px 10px;
+    font-size: 30px;
+    background-color: black;
+    border: solid 3px rgb(252, 32, 241);
+    outline: none;
+    color:rgb(252, 32, 241);
+}
+
+#returnToHQ:hover {
+    background-color: rgb(252, 32, 241);
+    color: black;
+}

@@ -1,0 +1,37 @@
+#logoutUser {
+    color: #3500D3;
+}
+
+#confirmLogout {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto 30px auto;
+    padding: 40px 10px 40px 10px;
+    background-color: black;
+    color: rgb(252, 32, 241);
+    border: 3px solid rgb(252, 32, 241);
+    border-radius: 10px;
+  }
+
+#confirmLogout > h2 {
+    margin-bottom: 30px;
+}
+
+#confirmLogout > h4 {
+    margin-bottom: 30px;
+}
+
+#logoutButtons {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+}
+
+#cancelLogout {
+    background-color: black !important;
+}
